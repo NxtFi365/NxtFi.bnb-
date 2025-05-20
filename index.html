@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NxtFi - Accept Crypto. Get Fiat Instantly.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header, section, footer {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1, h2, h3 { margin-bottom: 20px; font-weight: 700; }
+    p { margin-bottom: 15px; }
+    .btn {
+      background: #1a73e8;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      background: #1e1e1e;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      animation: fadeInUp 1s ease;
+    }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+    .features, .steps, .audience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+    .feature-box, .step-box, .audience-box {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255,255,255,0.05);
+      animation: fadeInUp 1s ease;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 40px;
+    }
+    .footer-links a {
+      margin: 0 10px;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #1e1e1e;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .iframe-wrap {
+      position: relative;
+      padding-bottom: 65%;
+      height: 0;
+    }
+    .iframe-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="position: absolute; top: 30px; left: 30px; z-index: 100;">
+    <a href="https://youtu.be/SpiTp7C8lSo" target="_blank">
+      <img src="logo.jpeg" alt="NxtFi Logo" style="height: 60px; border-radius: 8px;">
+    </a>
+  </div>
+
+  <div id="waitlistModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="iframe-wrap">
+        <iframe src="https://form.typeform.com/to/kHGEhP7F" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>Empowering Global Payments</h1>
+    <p>Accept Crypto. Get Fiat Instantly.</p>
+    <p>Borderless commerce meets real-time settlement with NxtFi.</p>
+    <button class="btn" onclick="openModal()">Join the Waitlist</button>
+    <a href="#" class="btn" style="background:#34a853;">Schedule a Demo</a>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/SpiTp7C8lSo" allowfullscreen></iframe>
+    </div>
+  </header>
+
+  <footer>
+    <p>&copy; 2025 NxtFi Innovation Inc. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:support@nxtfi.bnb">support@nxtfi.bnb</a> |
+    <a href="mailto:invest@nxtfi.bnb">invest@nxtfi.bnb</a> |
+    <a href="mailto:sales@nxtfi.bnb">sales@nxtfi.bnb</a></p>
+    <div class="footer-links">
+      <a href="#">About</a> |
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    function openModal() {
+      document.getElementById("waitlistModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("waitlistModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById("waitlistModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
